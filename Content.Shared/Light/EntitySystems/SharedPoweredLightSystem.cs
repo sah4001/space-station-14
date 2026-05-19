@@ -302,6 +302,19 @@ public abstract partial class SharedPoweredLightSystem : EntitySystem
                         _audio.PlayPredicted(light.TurnOnSound, uid, user: user, light.TurnOnSound.Params.AddVolume(-10f));
                     }
                 }
+                else if (!powerReceiver.Powered && light.On && lightBulb.UnpoweredLightEnergy > 0f)
+                {
+                    // For Unpowered light setup
+                    SetLight(uid, true, lightBulb.UnpoweredColor, light, lightBulb.UnpoweredLightRadius, lightBulb.UnpoweredLightEnergy, lightBulb.UnpoweredLightSoftness);
+                    _appearance.SetData(uid, PoweredLightVisuals.BulbState, PoweredLightState.On, appearance);
+                    var time = GameTiming.CurTime;
+                    if (time > light.LastThunk + ThunkDelay)
+                    {
+                        light.LastThunk = time;
+                        Dirty(uid, light);
+                        _audio.PlayPredicted(light.TurnOnSound, uid, user: user, light.TurnOnSound.Params.AddVolume(-10f));
+                    }
+                }
                 else
                 {
                     SetLight(uid, false, light: light);

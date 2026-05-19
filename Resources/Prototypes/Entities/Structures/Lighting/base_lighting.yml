@@ -181,6 +181,25 @@
     popupText: powered-light-component-burn-hand
 
 - type: entity
+  id: EmergencyPoweredlightLED
+  description: "A light fixture. Draws power and produces light when equipped with a light tube."
+  suffix: LED
+  parent: Poweredlight
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: EmergencyLedLightTube
+  - type: PointLight
+    radius: 15
+    energy: 1
+    softness: 0.9
+    color: "#EEEEFF"
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 1 # LEDs don't get as hot
+    popupText: powered-light-component-burn-hand
+
+- type: entity
   parent: AlwaysPoweredWallLight
   id: AlwaysPoweredLightLED
   suffix: Always Powered, LED

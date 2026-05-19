@@ -26,6 +26,11 @@
 
 - type: latheRecipe
   parent: BaseLightRecipe
+  id: EmergencyLedLightTube
+  result: EmergencyLedLightTube
+
+- type: latheRecipe
+  parent: BaseLightRecipe
   id: SodiumLightTube
   result: SodiumLightTube
 

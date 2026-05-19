@@ -60,6 +60,30 @@ public sealed partial class LightBulbComponent : Component
     public int PowerUse = 60;
 
     /// <summary>
+    /// The color of the lightbulb and the light it produces when power is lost.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public Color UnpoweredColor = Color.White;
+
+    /// <summary>
+    /// Relates to how bright the light produced by the lightbulb is when power is lost.
+    /// </summary>
+    [DataField]
+    public float UnpoweredLightEnergy = 0f;
+
+    /// <summary>
+    /// The maximum radius of the point light source this light produces when power is lost.
+    /// </summary>
+    [DataField]
+    public float UnpoweredLightRadius = 0;
+
+    /// <summary>
+    /// Relates to the falloff constant of the light produced by the lightbulb when power is lost.
+    /// </summary>
+    [DataField]
+    public float UnpoweredLightSoftness = 0;
+
+    /// <summary>
     /// The sound produced when the lightbulb breaks.
     /// </summary>
     [DataField]

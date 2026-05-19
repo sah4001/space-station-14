@@ -278,6 +278,24 @@
 
 - type: entity
   parent: BaseLightTube
+  name: emergency led light tube
+  description: A high power high energy bulb. Stays on when power is lost
+  id: EmergencyLedLightTube
+  components:
+  - type: LightBulb
+    color: "#EEEEFF"
+    lightEnergy: 1
+    lightRadius: 15
+    lightSoftness: 0.9
+    BurningTemperature: 350
+    PowerUse: 12
+    unpoweredColor: "#ff4040"
+    unpoweredLightEnergy: 0.3
+    unpoweredLightRadius: 10
+    unpoweredLightSoftness: 0.9
+
+- type: entity
+  parent: BaseLightTube
   name: exterior light tube
   description: A high power high energy bulb for the depths of space. May contain mercury.
   id: ExteriorLightTube
