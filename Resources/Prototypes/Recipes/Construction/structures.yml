@@ -1097,6 +1097,19 @@
     - !type:TileNotBlocked
 
 - type: construction
+  id: EmergencyLightTubeFixture
+  graph: LightFixture
+  startNode: start
+  targetNode: emergencyLightTube
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
   id: LightGroundFixture
   graph: LightFixture
   startNode: start
