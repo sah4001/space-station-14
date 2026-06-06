@@ -74,6 +74,30 @@
     exactVolume: true
 
 - type: entity
+  parent: [Clothing, ClothingSlotBase, BaseStructureDynamic]
+  id: ClothingBackpackGasTank
+  name: backpack gas tank
+  description: Holds a 50L of gas.
+  components:
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/gasbackpack.rsi
+    state: icon
+  - type: Item
+    size: Ginormous
+  - type: Clothing
+    slots: BACK
+    sprite: Clothing/Back/Backpacks/gasbackpack.rsi
+  - type: Appearance
+  - type: GasTank
+    releasePressure: 101.3
+    air:
+      volume: 50
+      temperature: 293.15
+
+- type: entity
   parent: ClothingBackpack
   id: ClothingBagPet
   name: pet bag
