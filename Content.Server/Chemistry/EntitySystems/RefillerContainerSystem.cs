@@ -16,6 +16,8 @@ using Content.Shared.Labels.Components;
 using Content.Shared.Storage;
 using Content.Server.Hands.Systems;
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Power.Components;
+using Content.Server.Power.Components;
 
 namespace Content.Server.Chemistry.EntitySystems
 {
@@ -45,15 +47,26 @@ namespace Content.Server.Chemistry.EntitySystems
             // If full skip
             FixedPoint2 missingCharge = solutionFiller.MaxCharge - solutionFiller.TotalCharge;
             if (missingCharge <= 0)
+            {
+                if (TryComp<ApcPowerReceiverComponent>(uid, out var receiver))
+                {
+                    receiver.Load = 1;
+                }
                 return;
+            }
             // If not a frame cycle wait
             solutionFiller.SummedFrameTime += frameTime;
-            if (solutionFiller.SummedFrameTime < solutionFiller.MaxFrameTime) // Update every second
+            if (solutionFiller.SummedFrameTime < solutionFiller.MaxFrameTime)
                 return;
 
             FixedPoint2 addingCharge = FixedPoint2.Min(missingCharge, solutionFiller.EnergyGain * solutionFiller.SummedFrameTime);
             solutionFiller.TotalCharge += addingCharge;
             Log.Info($"Adding charge to {uid}. New charge: {solutionFiller.TotalCharge}/{solutionFiller.MaxCharge}");
+            if (TryComp<ApcPowerReceiverComponent>(uid, out var receiver2))
+            {
+                receiver2.Load = (int)(addingCharge / solutionFiller.SummedFrameTime);
+            }
+
             solutionFiller.SummedFrameTime = 0f;
         }
     }
