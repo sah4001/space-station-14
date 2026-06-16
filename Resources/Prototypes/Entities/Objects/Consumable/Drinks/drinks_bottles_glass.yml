@@ -391,7 +391,8 @@
   - type: SolutionFilling
     ReagentId: Rum
     RefillRate: 10
-    MaxFrameTime: 0.25
+    maxFrameTime: 0.25
+    energyPerUnit: 1
 
 - type: entity
   parent: [DrinkVisualsAllFilled, DrinkBottleGlassBase]

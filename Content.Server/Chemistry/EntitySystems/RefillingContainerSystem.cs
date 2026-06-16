@@ -52,14 +52,44 @@ namespace Content.Server.Chemistry.EntitySystems
             solutionFilling.SummedFrameTime += frameTime;
             if (solutionFilling.SummedFrameTime < solutionFilling.MaxFrameTime) // Update every second
                 return;
-            FixedPoint2 maxAdded = solutionFilling.RefillRate * solutionFilling.SummedFrameTime;
-            Log.Info($"Refilling container {uid} with {maxAdded} units of {solutionFilling.Reagent}");
-            _solutionContainerSystem.AddSolution((uid, solution), new Solution(solutionFilling.Reagent.ToString(), maxAdded));
+            FixedPoint2 amountAdded = FixedPoint2.Min(solutionFilling.RefillRate * solutionFilling.SummedFrameTime, solution.Solution.AvailableVolume);
+
+            FixedPoint2 baseEnergyCost = amountAdded * solutionFilling.EnergyPerUnit;
+            FixedPoint2 spesosCost = amountAdded * solutionFilling.CostPerUnit;
+
+            bool allowFilling = true;
             EntityUid parent = Transform(uid).ParentUid;
-            if (TryComp<ReagentDispenserComponent>(parent, out var dispenser))
+            if (baseEnergyCost > 0)
             {
-                ReagentDispenserUpdateEvent ev = new ReagentDispenserUpdateEvent();
-                RaiseLocalEvent(parent, ev);
+                // Consume energy
+                if (TryComp<SolutionFillerComponent>(parent, out var filler))
+                {
+                    Log.Info($"Consuming energy from {parent} with multiplier {filler.EnergyConsumption} and total charge {filler.TotalCharge}/{filler.MaxCharge}");
+                    if (filler.TotalCharge >= baseEnergyCost * filler.EnergyConsumption)
+                    {
+                        filler.TotalCharge -= baseEnergyCost * filler.EnergyConsumption;
+                    }
+                    else
+                    {
+                        Log.Info($"Not enough energy in {parent}. Required: {baseEnergyCost * filler.EnergyConsumption}, Available: {filler.TotalCharge}");
+                        allowFilling = false;
+                    }
+                }
+                else
+                {
+                    allowFilling = false;
+                }
+            }
+
+            if (allowFilling)
+            {
+                Log.Info($"Refilling container {uid} with {amountAdded} units of {solutionFilling.Reagent} for {baseEnergyCost} energy and {spesosCost} spesos");
+                _solutionContainerSystem.AddSolution((uid, solution), new Solution(solutionFilling.Reagent.ToString(), amountAdded));
+                if (TryComp<ReagentDispenserComponent>(parent, out var dispenser))
+                {
+                    ReagentDispenserUpdateEvent ev = new ReagentDispenserUpdateEvent();
+                    RaiseLocalEvent(parent, ev);
+                }
             }
             solutionFilling.SummedFrameTime = 0f;
         }
