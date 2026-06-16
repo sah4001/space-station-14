@@ -379,6 +379,21 @@
         Quantity: 120
 
 - type: entity
+  parent: DrinkBottleRum
+  id: DrinkRumBottleRefilling
+  suffix: Refilling
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Rum
+        Quantity: 120
+  - type: SolutionFilling
+    ReagentId: Rum
+    RefillRate: 10
+    MaxFrameTime: 0.25
+
+- type: entity
   parent: [DrinkVisualsAllFilled, DrinkBottleGlassBase]
   id: DrinkBottleTequila
   name: Caccavo Guaranteed Quality tequila bottle

@@ -23,4 +23,11 @@ namespace Content.Server.Chemistry.Components
         [ViewVariables(VVAccess.ReadWrite)]
         public ReagentDispenserDispenseAmount DispenseAmount = ReagentDispenserDispenseAmount.U10;
     }
+
+    public sealed class ReagentDispenserUpdateEvent : EntityEventArgs
+    {
+        public ReagentDispenserUpdateEvent()
+        {
+        }
+    }
 }
