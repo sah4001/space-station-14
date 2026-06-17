@@ -1,0 +1,199 @@
+- type: entity
+  parent: JugAluminium
+  id: JugAluminiumRefill
+  components:
+  - type: SolutionFilling
+    ReagentId: Aluminium
+    RefillRate: 10
+    maxFrameTime: 5
+    energyPerUnit: 1
+    
+- type: entity
+  parent: JugOxygen
+  id: JugOxygenRefill
+  components:
+  - type: SolutionFilling
+    ReagentId: Oxygen
+    RefillRate: 10
+    maxFrameTime: 5
+    energyPerUnit: 1
+
+- type: entity
+  parent: JugCarbon
+  id: JugCarbonRefill
+  components:
+  - type: SolutionFilling
+    ReagentId: Carbon
+    RefillRate: 10
+    maxFrameTime: 5
+    energyPerUnit: 1
+
+- type: entity
+  parent: JugSugar
+  id: JugSugarRefill
+  components:
+  - type: SolutionFilling
+    ReagentId: Sugar
+    RefillRate: 10
+    maxFrameTime: 5
+    energyPerUnit: 1
+
+- type: entity
+  parent: JugHydrogen
+  id: JugHydrogenRefill
+  components:
+  - type: SolutionFilling
+    ReagentId: Hydrogen
+    RefillRate: 10
+    maxFrameTime: 5
+    energyPerUnit: 1
+
+- type: entity
+  parent: JugIron
+  id: JugIronRefill
+  components:
+  - type: SolutionFilling
+    ReagentId: Iron
+    RefillRate: 10
+    maxFrameTime: 5
+    energyPerUnit: 1
+
+- type: entity
+  parent: JugChlorine
+  id: JugChlorineRefill
+  components:
+  - type: SolutionFilling
+    ReagentId: Chlorine
+    RefillRate: 10
+    maxFrameTime: 5
+    energyPerUnit: 1
+
+- type: entity
+  parent: JugCopper
+  id: JugCopperRefill
+  components:
+  - type: SolutionFilling
+    ReagentId: Copper
+    RefillRate: 10
+    maxFrameTime: 5
+    energyPerUnit: 1
+
+- type: entity
+  parent: JugEthanol
+  id: JugEthanolRefill
+  components:
+  - type: SolutionFilling
+    ReagentId: Ethanol
+    RefillRate: 10
+    maxFrameTime: 5
+    energyPerUnit: 1
+
+- type: entity
+  parent: JugFluorine
+  id: JugFluorineRefill
+  components:
+  - type: SolutionFilling
+    ReagentId: Fluorine
+    RefillRate: 10
+    maxFrameTime: 5
+    energyPerUnit: 1
+
+- type: entity
+  parent: JugIodine
+  id: JugIodineRefill
+  components:
+  - type: SolutionFilling
+    ReagentId: Iodine
+    RefillRate: 10
+    maxFrameTime: 5
+    energyPerUnit: 1
+
+- type: entity
+  parent: JugLithium
+  id: JugLithiumRefill
+  components:
+  - type: SolutionFilling
+    ReagentId: Lithium
+    RefillRate: 10
+    maxFrameTime: 5
+    energyPerUnit: 1
+
+- type: entity
+  parent: JugMercury
+  id: JugMercuryRefill
+  components:
+  - type: SolutionFilling
+    ReagentId: Mercury
+    RefillRate: 10
+    maxFrameTime: 5
+    energyPerUnit: 1
+
+- type: entity
+  parent: JugNitrogen
+  id: JugNitrogenRefill
+  components:
+  - type: SolutionFilling
+    ReagentId: Nitrogen
+    RefillRate: 10
+    maxFrameTime: 5
+    energyPerUnit: 1
+
+- type: entity
+  parent: JugPhosphorus
+  id: JugPhosphorusRefill
+  components:
+  - type: SolutionFilling
+    ReagentId: Phosphorus
+    RefillRate: 10
+    maxFrameTime: 5
+    energyPerUnit: 1
+
+- type: entity
+  parent: JugPotassium
+  id: JugPotassiumRefill
+  components:
+  - type: SolutionFilling
+    ReagentId: Potassium
+    RefillRate: 10
+    maxFrameTime: 5
+    energyPerUnit: 1
+
+- type: entity
+  parent: JugRadium
+  id: JugRadiumRefill
+  components:
+  - type: SolutionFilling
+    ReagentId: Radium
+    RefillRate: 10
+    maxFrameTime: 5
+    energyPerUnit: 1
+
+- type: entity
+  parent: JugSilicon
+  id: JugSiliconRefill
+  components:
+  - type: SolutionFilling
+    ReagentId: Silicon
+    RefillRate: 10
+    maxFrameTime: 5
+    energyPerUnit: 1
+
+- type: entity
+  parent: JugSodium
+  id: JugSodiumRefill
+  components:
+  - type: SolutionFilling
+    ReagentId: Sodium
+    RefillRate: 10
+    maxFrameTime: 5
+    energyPerUnit: 1
+
+- type: entity
+  parent: JugSulfur
+  id: JugSulfurRefill
+  components:
+  - type: SolutionFilling
+    ReagentId: Sulfur
+    RefillRate: 10
+    maxFrameTime: 5
+    energyPerUnit: 1
