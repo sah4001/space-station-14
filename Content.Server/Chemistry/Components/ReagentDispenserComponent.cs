@@ -22,6 +22,11 @@ namespace Content.Server.Chemistry.Components
 
         [ViewVariables(VVAccess.ReadWrite)]
         public ReagentDispenserDispenseAmount DispenseAmount = ReagentDispenserDispenseAmount.U10;
+
+        public bool DirtyInventory = false;
+        public bool RecentInteraction = false;
+
+
     }
 
     public sealed class ReagentDispenserUpdateEvent : EntityEventArgs

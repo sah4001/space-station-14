@@ -7,6 +7,11 @@
     RefillRate: 10
     maxFrameTime: 5
     energyPerUnit: 1
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
     
 - type: entity
   parent: JugOxygen
@@ -17,6 +22,11 @@
     RefillRate: 10
     maxFrameTime: 5
     energyPerUnit: 1
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
 
 - type: entity
   parent: JugCarbon
@@ -27,6 +37,11 @@
     RefillRate: 10
     maxFrameTime: 5
     energyPerUnit: 1
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
 
 - type: entity
   parent: JugSugar
@@ -37,6 +52,11 @@
     RefillRate: 10
     maxFrameTime: 5
     energyPerUnit: 1
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
 
 - type: entity
   parent: JugHydrogen
@@ -47,6 +67,11 @@
     RefillRate: 10
     maxFrameTime: 5
     energyPerUnit: 1
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
 
 - type: entity
   parent: JugIron
@@ -57,6 +82,11 @@
     RefillRate: 10
     maxFrameTime: 5
     energyPerUnit: 1
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
 
 - type: entity
   parent: JugChlorine
@@ -67,6 +97,11 @@
     RefillRate: 10
     maxFrameTime: 5
     energyPerUnit: 1
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
 
 - type: entity
   parent: JugCopper
@@ -77,6 +112,11 @@
     RefillRate: 10
     maxFrameTime: 5
     energyPerUnit: 1
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
 
 - type: entity
   parent: JugEthanol
@@ -87,6 +127,11 @@
     RefillRate: 10
     maxFrameTime: 5
     energyPerUnit: 1
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
 
 - type: entity
   parent: JugFluorine
@@ -97,6 +142,11 @@
     RefillRate: 10
     maxFrameTime: 5
     energyPerUnit: 1
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
 
 - type: entity
   parent: JugIodine
@@ -107,6 +157,11 @@
     RefillRate: 10
     maxFrameTime: 5
     energyPerUnit: 1
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
 
 - type: entity
   parent: JugLithium
@@ -117,6 +172,11 @@
     RefillRate: 10
     maxFrameTime: 5
     energyPerUnit: 1
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
 
 - type: entity
   parent: JugMercury
@@ -127,6 +187,11 @@
     RefillRate: 10
     maxFrameTime: 5
     energyPerUnit: 1
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
 
 - type: entity
   parent: JugNitrogen
@@ -137,6 +202,11 @@
     RefillRate: 10
     maxFrameTime: 5
     energyPerUnit: 1
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
 
 - type: entity
   parent: JugPhosphorus
@@ -147,6 +217,11 @@
     RefillRate: 10
     maxFrameTime: 5
     energyPerUnit: 1
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
 
 - type: entity
   parent: JugPotassium
@@ -157,6 +232,11 @@
     RefillRate: 10
     maxFrameTime: 5
     energyPerUnit: 1
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
 
 - type: entity
   parent: JugRadium
@@ -167,6 +247,11 @@
     RefillRate: 10
     maxFrameTime: 5
     energyPerUnit: 1
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
 
 - type: entity
   parent: JugSilicon
@@ -177,6 +262,11 @@
     RefillRate: 10
     maxFrameTime: 5
     energyPerUnit: 1
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
 
 - type: entity
   parent: JugSodium
@@ -187,6 +277,11 @@
     RefillRate: 10
     maxFrameTime: 5
     energyPerUnit: 1
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
 
 - type: entity
   parent: JugSulfur
@@ -197,3 +292,44 @@
     RefillRate: 10
     maxFrameTime: 5
     energyPerUnit: 1
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Chemistry/jug_refill.rsi
+
+- type: entity
+  id: ChemistryBottleBicaridineRefill
+  suffix: bicaridine
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: SolutionFilling
+    ReagentId: Bicaridine
+    RefillRate: 2
+    maxFrameTime: 5
+    energyPerUnit: 1
+  - type: Label
+    currentLabel: reagent-name-bicaridine
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Bicaridine
+        Quantity: 30
+
+- type: entity
+  id: ChemistryBottleSalineRefill
+  suffix: saline
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: SolutionFilling
+    ReagentId: Saline
+    RefillRate: 2
+    maxFrameTime: 5
+    energyPerUnit: 1
+  - type: Label
+    currentLabel: reagent-name-saline
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Saline
+        Quantity: 30

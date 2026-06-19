@@ -35,15 +35,15 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: DrinkAleBottleFullGrowler
-        - id: DrinkBeerGrowler
-        - id: DrinkCoffeeLiqueurBottleFull
-        - id: DrinkCognacBottleFull
-        - id: DrinkGinBottleFull
-        - id: DrinkMeadJug
-        - id: DrinkRumBottleFull
-        - id: DrinkTequilaBottleFull
-        - id: DrinkVermouthBottleFull
-        - id: DrinkVodkaBottleFull
-        - id: DrinkWhiskeyBottleFull
-        - id: DrinkWineBottleFull
+        - id: DrinkAleBottleRefilling
+        - id: DrinkBeerBottleRefilling
+        - id: DrinkCoffeeLiqueurBottleRefilling
+        - id: DrinkCognacBottleRefilling
+        - id: DrinkGinBottleRefilling
+        - id: DrinkMeadBottleRefilling
+        - id: DrinkRumBottleRefilling
+        - id: DrinkTequilaBottleRefilling
+        - id: DrinkVermouthBottleRefilling
+        - id: DrinkVodkaBottleRefilling
+        - id: DrinkWhiskeyBottleRefilling
+        - id: DrinkWineBottleRefilling

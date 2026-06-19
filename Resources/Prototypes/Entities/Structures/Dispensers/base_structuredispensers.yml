@@ -57,6 +57,8 @@
     - 0,0,15,11
   - type: SolutionFiller
     energyConsumption: 1
+    maxCharge: 50000
+    energyGain: 1000
   - type: ReagentDispenser
     beakerSlot:
       whitelistFailPopup: reagent-dispenser-component-cannot-put-entity-message

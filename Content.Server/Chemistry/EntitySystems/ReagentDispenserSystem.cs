@@ -34,13 +34,15 @@ namespace Content.Server.Chemistry.EntitySystems
         [Dependency] private OpenableSystem _openable = default!;
         [Dependency] private HandsSystem _handsSystem = default!;
 
+        private float totalFrameTime = 0f;
+
         public override void Initialize()
         {
             base.Initialize();
 
             SubscribeLocalEvent<ReagentDispenserComponent, ComponentStartup>(SubscribeUpdateUiState);
             SubscribeLocalEvent<ReagentDispenserComponent, SolutionChangedEvent>(SubscribeUpdateUiState);
-            SubscribeLocalEvent<ReagentDispenserComponent, ReagentDispenserUpdateEvent>(SubscribeUpdateUiState);
+            SubscribeLocalEvent<ReagentDispenserComponent, ReagentDispenserUpdateEvent>(UpdateUIInventory);
             SubscribeLocalEvent<ReagentDispenserComponent, EntInsertedIntoContainerMessage>(SubscribeUpdateUiState, after: [typeof(SharedStorageSystem)]);
             SubscribeLocalEvent<ReagentDispenserComponent, EntRemovedFromContainerMessage>(SubscribeUpdateUiState, after: [typeof(SharedStorageSystem)]);
             SubscribeLocalEvent<ReagentDispenserComponent, BoundUIOpenedEvent>(SubscribeUpdateUiState);
@@ -55,7 +57,40 @@ namespace Content.Server.Chemistry.EntitySystems
 
         private void SubscribeUpdateUiState<T>(Entity<ReagentDispenserComponent> ent, ref T ev)
         {
+            //If someone has interacted with the dispenser recently pause the ui updates for a sec
+            ent.Comp.RecentInteraction = true;
             UpdateUiState(ent);
+        }
+
+        private void UpdateUIInventory<T>(Entity<ReagentDispenserComponent> ent, ref T ev)
+        {
+            //Flag the inventory as dirty and make there be at least two updates so that if some is using the machine a lot it is not an issue
+            ent.Comp.DirtyInventory = true;
+        }
+
+        public override void Update(float frameTime)
+        {
+            totalFrameTime += frameTime;
+            if (totalFrameTime >= 1.0f)
+            {
+                totalFrameTime = 0f;
+                var query = EntityQueryEnumerator<ReagentDispenserComponent>();
+                while (query.MoveNext(out var uid, out var reagentDispenser))
+                {
+                    if (reagentDispenser.RecentInteraction)
+                    {
+                        reagentDispenser.RecentInteraction = false;
+                    }
+                    else
+                    {
+                        if (reagentDispenser.DirtyInventory)
+                        {
+                            UpdateUiState((uid, reagentDispenser));
+                            reagentDispenser.DirtyInventory = false;
+                        }
+                    }
+                }
+            }
         }
 
         private void UpdateUiState(Entity<ReagentDispenserComponent> reagentDispenser)
@@ -119,6 +154,7 @@ namespace Content.Server.Chemistry.EntitySystems
 
         private void OnSetDispenseAmountMessage(Entity<ReagentDispenserComponent> reagentDispenser, ref ReagentDispenserSetDispenseAmountMessage message)
         {
+            reagentDispenser.Comp.RecentInteraction = true;
             reagentDispenser.Comp.DispenseAmount = message.ReagentDispenserDispenseAmount;
             UpdateUiState(reagentDispenser);
             ClickSound(reagentDispenser);
@@ -126,6 +162,7 @@ namespace Content.Server.Chemistry.EntitySystems
 
         private void OnDispenseReagentMessage(Entity<ReagentDispenserComponent> reagentDispenser, ref ReagentDispenserDispenseReagentMessage message)
         {
+            reagentDispenser.Comp.RecentInteraction = true;
             if (!TryComp<StorageComponent>(reagentDispenser.Owner, out var storage))
             {
                 return;
@@ -158,6 +195,7 @@ namespace Content.Server.Chemistry.EntitySystems
 
         private void OnEjectReagentMessage(Entity<ReagentDispenserComponent> reagentDispenser, ref ReagentDispenserEjectContainerMessage message)
         {
+            reagentDispenser.Comp.RecentInteraction = true;
             if (!TryComp<StorageComponent>(reagentDispenser.Owner, out var storage))
             {
                 return;
@@ -173,6 +211,7 @@ namespace Content.Server.Chemistry.EntitySystems
 
         private void OnClearContainerSolutionMessage(Entity<ReagentDispenserComponent> reagentDispenser, ref ReagentDispenserClearContainerSolutionMessage message)
         {
+            reagentDispenser.Comp.RecentInteraction = true;
             var outputContainer = _itemSlotsSystem.GetItemOrNull(reagentDispenser, SharedReagentDispenser.OutputSlotName);
             if (outputContainer is not { Valid: true } || !_solutionContainerSystem.TryGetFitsInDispenser(outputContainer.Value, out var solution, out _))
                 return;
