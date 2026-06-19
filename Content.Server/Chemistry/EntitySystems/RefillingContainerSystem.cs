@@ -50,7 +50,7 @@ namespace Content.Server.Chemistry.EntitySystems
             if (solution.Solution.AvailableVolume == 0)
                 return;
             solutionFilling.SummedFrameTime += frameTime;
-            if (solutionFilling.SummedFrameTime < solutionFilling.MaxFrameTime) // Update every second
+            if (solutionFilling.SummedFrameTime < solutionFilling.MaxFrameTime)
                 return;
             FixedPoint2 amountAdded = FixedPoint2.Min(solutionFilling.RefillRate * solutionFilling.SummedFrameTime, solution.Solution.AvailableVolume);
 

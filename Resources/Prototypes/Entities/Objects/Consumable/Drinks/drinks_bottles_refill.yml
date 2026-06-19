@@ -40,7 +40,6 @@
   - type: SolutionFilling
     ReagentId: Ale
     RefillRate: 10
-    maxFrameTime: 0.25
     energyPerUnit: 1
 
 - type: entity
@@ -60,7 +59,6 @@
   - type: SolutionFilling
     ReagentId: Beer
     RefillRate: 10
-    maxFrameTime: 0.25
     energyPerUnit: 1
 
 - type: entity
@@ -80,7 +78,6 @@
   - type: SolutionFilling
     ReagentId: CoffeeLiqueur
     RefillRate: 10
-    maxFrameTime: 0.25
     energyPerUnit: 1
 
 - type: entity
@@ -100,7 +97,6 @@
   - type: SolutionFilling
     ReagentId: Cognac
     RefillRate: 10
-    maxFrameTime: 0.25
     energyPerUnit: 1
 
 - type: entity
@@ -120,7 +116,6 @@
   - type: SolutionFilling
     ReagentId: Gin
     RefillRate: 10
-    maxFrameTime: 0.25
     energyPerUnit: 1
 
 - type: entity
@@ -140,7 +135,6 @@
   - type: SolutionFilling
     ReagentId: Mead
     RefillRate: 10
-    maxFrameTime: 0.25
     energyPerUnit: 1
 
 - type: entity
@@ -160,7 +154,6 @@
   - type: SolutionFilling
     ReagentId: Rum
     RefillRate: 10
-    maxFrameTime: 0.25
     energyPerUnit: 1
 
 - type: entity
@@ -180,7 +173,6 @@
   - type: SolutionFilling
     ReagentId: Tequila
     RefillRate: 10
-    maxFrameTime: 0.25
     energyPerUnit: 1
 
 - type: entity
@@ -200,7 +192,6 @@
   - type: SolutionFilling
     ReagentId: Vermouth
     RefillRate: 10
-    maxFrameTime: 0.25
     energyPerUnit: 1
 
 - type: entity
@@ -220,7 +211,6 @@
   - type: SolutionFilling
     ReagentId: Vodka
     RefillRate: 10
-    maxFrameTime: 0.25
     energyPerUnit: 1
 
 - type: entity
@@ -240,7 +230,6 @@
   - type: SolutionFilling
     ReagentId: Whiskey
     RefillRate: 10
-    maxFrameTime: 0.25
     energyPerUnit: 1
 
 - type: entity
@@ -260,5 +249,4 @@
   - type: SolutionFilling
     ReagentId: Wine
     RefillRate: 10
-    maxFrameTime: 0.25
     energyPerUnit: 1

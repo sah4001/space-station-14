@@ -5,7 +5,6 @@
   - type: SolutionFilling
     ReagentId: Aluminium
     RefillRate: 10
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Sprite
     sprite: Objects/Specific/Chemistry/jug_refill.rsi
@@ -20,7 +19,6 @@
   - type: SolutionFilling
     ReagentId: Oxygen
     RefillRate: 10
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Sprite
     sprite: Objects/Specific/Chemistry/jug_refill.rsi
@@ -35,7 +33,6 @@
   - type: SolutionFilling
     ReagentId: Carbon
     RefillRate: 10
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Sprite
     sprite: Objects/Specific/Chemistry/jug_refill.rsi
@@ -50,7 +47,6 @@
   - type: SolutionFilling
     ReagentId: Sugar
     RefillRate: 10
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Sprite
     sprite: Objects/Specific/Chemistry/jug_refill.rsi
@@ -65,7 +61,6 @@
   - type: SolutionFilling
     ReagentId: Hydrogen
     RefillRate: 10
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Sprite
     sprite: Objects/Specific/Chemistry/jug_refill.rsi
@@ -80,7 +75,6 @@
   - type: SolutionFilling
     ReagentId: Iron
     RefillRate: 10
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Sprite
     sprite: Objects/Specific/Chemistry/jug_refill.rsi
@@ -95,7 +89,6 @@
   - type: SolutionFilling
     ReagentId: Chlorine
     RefillRate: 10
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Sprite
     sprite: Objects/Specific/Chemistry/jug_refill.rsi
@@ -110,7 +103,6 @@
   - type: SolutionFilling
     ReagentId: Copper
     RefillRate: 10
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Sprite
     sprite: Objects/Specific/Chemistry/jug_refill.rsi
@@ -125,7 +117,6 @@
   - type: SolutionFilling
     ReagentId: Ethanol
     RefillRate: 10
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Sprite
     sprite: Objects/Specific/Chemistry/jug_refill.rsi
@@ -140,7 +131,6 @@
   - type: SolutionFilling
     ReagentId: Fluorine
     RefillRate: 10
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Sprite
     sprite: Objects/Specific/Chemistry/jug_refill.rsi
@@ -155,7 +145,6 @@
   - type: SolutionFilling
     ReagentId: Iodine
     RefillRate: 10
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Sprite
     sprite: Objects/Specific/Chemistry/jug_refill.rsi
@@ -170,7 +159,6 @@
   - type: SolutionFilling
     ReagentId: Lithium
     RefillRate: 10
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Sprite
     sprite: Objects/Specific/Chemistry/jug_refill.rsi
@@ -185,7 +173,6 @@
   - type: SolutionFilling
     ReagentId: Mercury
     RefillRate: 10
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Sprite
     sprite: Objects/Specific/Chemistry/jug_refill.rsi
@@ -200,7 +187,6 @@
   - type: SolutionFilling
     ReagentId: Nitrogen
     RefillRate: 10
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Sprite
     sprite: Objects/Specific/Chemistry/jug_refill.rsi
@@ -215,7 +201,6 @@
   - type: SolutionFilling
     ReagentId: Phosphorus
     RefillRate: 10
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Sprite
     sprite: Objects/Specific/Chemistry/jug_refill.rsi
@@ -230,7 +215,6 @@
   - type: SolutionFilling
     ReagentId: Potassium
     RefillRate: 10
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Sprite
     sprite: Objects/Specific/Chemistry/jug_refill.rsi
@@ -245,7 +229,6 @@
   - type: SolutionFilling
     ReagentId: Radium
     RefillRate: 10
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Sprite
     sprite: Objects/Specific/Chemistry/jug_refill.rsi
@@ -260,7 +243,6 @@
   - type: SolutionFilling
     ReagentId: Silicon
     RefillRate: 10
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Sprite
     sprite: Objects/Specific/Chemistry/jug_refill.rsi
@@ -275,7 +257,6 @@
   - type: SolutionFilling
     ReagentId: Sodium
     RefillRate: 10
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Sprite
     sprite: Objects/Specific/Chemistry/jug_refill.rsi
@@ -290,7 +271,6 @@
   - type: SolutionFilling
     ReagentId: Sulfur
     RefillRate: 10
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Sprite
     sprite: Objects/Specific/Chemistry/jug_refill.rsi
@@ -306,7 +286,6 @@
   - type: SolutionFilling
     ReagentId: Bicaridine
     RefillRate: 2
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Label
     currentLabel: reagent-name-bicaridine
@@ -324,7 +303,6 @@
   - type: SolutionFilling
     ReagentId: Saline
     RefillRate: 2
-    maxFrameTime: 5
     energyPerUnit: 1
   - type: Label
     currentLabel: reagent-name-saline

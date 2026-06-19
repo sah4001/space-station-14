@@ -39,7 +39,7 @@ public sealed partial class SolutionFillingComponent : Component
     public FixedPoint2 CostPerUnit = 0;
 
     [DataField]
-    public float MaxFrameTime = 0.5f;
+    public float MaxFrameTime = 1f;
 
     public float SummedFrameTime = 0f;
 }
