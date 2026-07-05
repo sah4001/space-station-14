@@ -84,6 +84,19 @@ namespace Content.Shared.Chemistry
     }
 
     [Serializable, NetSerializable]
+    public sealed class ChemMasterOutputToBladderMessage : BoundUserInterfaceMessage
+    {
+        public readonly uint Dosage;
+        public readonly string Label;
+
+        public ChemMasterOutputToBladderMessage(uint dosage, string label)
+        {
+            Dosage = dosage;
+            Label = label;
+        }
+    }
+
+    [Serializable, NetSerializable]
     public sealed class ChemMasterOutputDrawSourceMessage(ChemMasterDrawSource drawSource) : BoundUserInterfaceMessage
     {
         public readonly ChemMasterDrawSource DrawSource = drawSource;

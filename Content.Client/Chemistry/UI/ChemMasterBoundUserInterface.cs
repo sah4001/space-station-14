@@ -46,6 +46,9 @@ namespace Content.Client.Chemistry.UI
             _window.CreateBottleButton.OnPressed += _ => SendMessage(
                 new ChemMasterOutputToBottleMessage(
                     (uint) _window.BottleDosage.Value, _window.LabelLine));
+            _window.CreateBladderButton.OnPressed += _ => SendMessage(
+                new ChemMasterOutputToBladderMessage(
+                    (uint) _window.BladderDosage.Value, _window.LabelLine));
             _window.BufferSortButton.OnPressed += _ => SendMessage(
                     new ChemMasterSortingTypeCycleMessage());
             _window.OutputBufferDraw.OnPressed += _ => SendMessage(

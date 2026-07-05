@@ -1316,3 +1316,57 @@
     - id: ChemistryBottleUltravasculine
     - id: ChemistryBottleCharcoal
     - id: ChemistryBottleLaughter
+
+- type: entity
+  name: regent bladder
+  parent: [BaseItem] # This solution name is hardcoded in ChemMasterComponent
+  id: RegentBladder
+  description: A bladder filled with something.
+  components:
+  - type: Solution
+    solution:
+      maxVol: 480
+      id: drink
+  - type: Tag
+    tags:
+    - Bottle
+  - type: SpaceGarbage
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/bottle.rsi
+    layers:
+    - state: bottle-1
+    - state: bottle-1-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 6
+    fillBaseName: bottle-1-
+  - type: Edible
+    edible: Drink
+    solution: drink
+    destroyOnEmpty: true
+    utensil: None
+  - type: MixableSolution
+    solution: drink
+  - type: ExaminableSolution
+    solution: drink
+    exactVolume: true
+  - type: DrawableSolution
+    solution: drink
+  - type: SolutionItemStatus
+    solution: drink
+  - type: Item
+    size: Huge
+    sprite: Objects/Specific/Chemistry/beaker.rsi
+  - type: MeleeWeapon
+    soundNoDamage:
+      path: "/Audio/Effects/Fluids/splat.ogg"
+    damage:
+      types:
+        Blunt: 0
+  - type: TrashOnSolutionEmpty
+    solution: drink
+  - type: StaticPrice
+    price: 0
+  - type: DnaSubstanceTrace

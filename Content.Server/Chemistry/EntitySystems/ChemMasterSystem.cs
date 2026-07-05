@@ -41,6 +41,7 @@ namespace Content.Server.Chemistry.EntitySystems
         [Dependency] private ISharedAdminLogManager _adminLogger = default!;
 
         private static readonly EntProtoId PillPrototypeId = "Pill";
+        private static readonly EntProtoId BladderPrototypeId = "RegentBladder";
 
         public override void Initialize()
         {
@@ -61,6 +62,7 @@ namespace Content.Server.Chemistry.EntitySystems
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterReagentAmountButtonMessage>(OnReagentButtonMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterCreatePillsMessage>(OnCreatePillsMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterOutputToBottleMessage>(OnOutputToBottleMessage);
+            SubscribeLocalEvent<ChemMasterComponent, ChemMasterOutputToBladderMessage>(OnOutputToBladderMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterOutputDrawSourceMessage>(OnSetDrawSourceMessage);
         }
 
@@ -256,6 +258,46 @@ namespace Content.Server.Chemistry.EntitySystems
         {
             var user = message.Actor;
             var maybeContainer = _itemSlotsSystem.GetItemOrNull(chemMaster, SharedChemMaster.OutputSlotName);
+            if (maybeContainer is not { Valid: true } container
+                || !_solutionContainerSystem.TryGetSolution(container, SharedChemMaster.BottleSolutionName, out var soln, out var solution))
+            {
+                return; // output can't fit reagents
+            }
+
+            // Ensure the amount is valid.
+            if (message.Dosage == 0 || message.Dosage > solution.AvailableVolume)
+                return;
+
+            // Ensure label length is within the character limit.
+            if (message.Label.Length > SharedChemMaster.LabelMaxLength)
+                return;
+
+            if (!WithdrawFromSource(chemMaster, message.Dosage, user, out var withdrawal))
+                return;
+
+            _labelSystem.Label(container, message.Label);
+            _solutionContainerSystem.TryAddSolution(soln.Value, withdrawal);
+
+            // Log bottle creation by a user
+            _adminLogger.Add(LogType.Action, LogImpact.Low,
+                $"{ToPrettyString(user):user} bottled {ToPrettyString(container):bottle} {SharedSolutionContainerSystem.ToPrettyString(solution)}");
+
+            UpdateUiState(chemMaster);
+            ClickSound(chemMaster);
+        }
+
+        private void OnOutputToBladderMessage(Entity<ChemMasterComponent> chemMaster, ref ChemMasterOutputToBladderMessage message)
+        {
+            var user = message.Actor;
+            var maybeContainer = _itemSlotsSystem.GetItemOrNull(chemMaster, SharedChemMaster.OutputSlotName);
+            if (maybeContainer is null)
+            {
+                maybeContainer = Spawn(BladderPrototypeId);
+                if (!_itemSlotsSystem.TryInsert(chemMaster, SharedChemMaster.OutputSlotName, (EntityUid)maybeContainer, user))
+                {
+                    return;
+                }
+            }
             if (maybeContainer is not { Valid: true } container
                 || !_solutionContainerSystem.TryGetSolution(container, SharedChemMaster.BottleSolutionName, out var soln, out var solution))
             {
